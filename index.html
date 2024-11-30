@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Rizqy Raka">
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
+    <title>eziBox</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="eziBox Logo" title="eziBox Logo">
+            </div>
+            
+            <div class="search-bar-container">
+                <input type="text" placeholder="Search for products" class="search-bar">
+                
+            </div>
+            <button class="search-button">
+                <img src="images/search.png" alt="Search Icon"> 
+            </button>
+    
+            <div class="cart-container">
+                <a href="#" id="cart-link">
+                    <img src="images/cart.png" alt="Cart Icon">
+                    <span id="cart-count">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+    
+
+    <section class="banner">
+        <div class="banner-container">
+            <img src="images/banner/banner1.jpg" alt="Banner Image 1" class="banner-image active">
+            <img src="images/banner/banner2.jpg" alt="Banner Image 2" class="banner-image">
+            <img src="images/banner/banner3.jpg" alt="Banner Image 3" class="banner-image">
+            <img src="images/banner/banner4.jpg" alt="Banner Image 4" class="banner-image">
+        </div>
+    </section>
+     
+
+    <section class="products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <div class="product">
+                <img src="images/product/1.jpg" alt="Product 1">
+                <h3>Iphone 13 Pro 256 GB</h3>
+                <p>Rp 19.499.000</p>
+                <button class="add-to-cart" data-name="Iphone 13 Pro 256 GB" data-price="19499000">Masukkan Keranjang</button>
+            </div>
+
+            <div class="product">
+                <img src="images/product/2.jpg" alt="Product 2">
+                <h3>Iphone 11 128 GB</h3>
+                <p>Rp 9.499.000</p>
+                <button class="add-to-cart" data-name="Iphone 11 128 GB" data-price="9499000">Masukkan Keranjang</button>
+            </div>
+            <div class="product">
+                <img src="images/product/3.jpg" alt="Product 3">
+                <h3>Iphone 12 Pro 256 GB</h3>
+                <p>Rp 16.799.000</p>
+                <button class="add-to-cart" data-name="Iphone 12 Pro 256 GB" data-price="16799000">Masukkan Keranjang</button>
+            </div>
+            <div class="product">
+                <img src="images/product/4.jpg" alt="Product 4">
+                <h3>Iphone 11 Pro Max 256 GB</h3>
+                <p>Rp 11.500.000</p>
+                <button class="add-to-cart" data-name="Iphone 11 Pro Max 256 GB" data-price="11500000">Masukkan Keranjang</button>
+            </div>
+            <div class="product">
+                <img src="images/product/5.jpg" alt="Product 5">
+                <h3>Iphone 14 Pro 1TB</h3>
+                <p>Rp 19.999.000</p>
+                <button class="add-to-cart" data-name="Iphone 14 Pro 1 TB" data-price="19999000">Masukkan Keranjang</button>
+            </div>
+            <div class="product">
+                <img src="images/product/6.jpg" alt="Product 6">
+                <h3>Iphone X 64 GB</h3>
+                <p>Rp 4.999.000</p>
+                <button class="add-to-cart" data-name="Iphone X 64 GB" data-price="4999000">Masukkan Keranjang</button>
+            </div>
+            <div class="product">
+                <img src="images/product/7.jpg" alt="Product 7">
+                <h3>Iphone 13 128 GB</h3>
+                <p>Rp 10.249.000</p>
+                <button class="add-to-cart" data-name="Iphone 13 128 GB" data-price="10249000">Masukkan Keranjang</button>
+            </div>
+            <div class="product">
+                <img src="images/product/8.jpg" alt="Product 8">
+                <h3>Iphone 15 Pro Max 1 TB </h3>
+                <p>Rp 33.999.000</p>
+                <button class="add-to-cart" data-name="Iphone 15 Pro Max 1 TB" data-price="33999000">Masukkan Keranjang</button>
+            </div>
+            <div class="product">
+                <img src="images/product/9.jpg" alt="Product 9">
+                <h3>Iphone 15 256 GB</h3>
+                <p>Rp 13.524.000</p>
+                <button class="add-to-cart" data-name="Iphone 15 256 GB" data-price="13524000">Masukkan Keranjang</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart-section" >
+        <h2>Your Cart</h2>
+        <table id="cart-table">
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Quantity</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody id="cart-items"></tbody>
+        </table>
+        <p>Total: Rp. <span id="total-price">0</span></p>
+        <button id="clear-cart">Clear Cart</button>
+        <button id="checkout-button">Checkout</button>
+    </section>
+
+    <section id="maintenance-section" class="hidden">
+        <h2>Under Maintenance</h2>
+        <p>We are currently undergoing maintenance. Please check back later!</p>
+    </section>
+
+    <div id="modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close" id="close-modal">&times;</span>
+            <h2>Error</h2>
+            <p>Mohon maaf fitur ini sedang maintenance</p>
+            <button id="reload-page">Reload Page</button>
+        </div>
+    </div>
+
+    <footer id="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="fooertxt">
+                    <h3>Layanan Pelanggang</h3>
+                    <a href="#" class="footer-link"><p>Bantuan</p> </a>
+                    <a href="#" class="footer-link"><p>Metode Pembayaran</p> </a>
+                    <a href="#" class="footer-link"><p>Lacak Pesanan</p> </a>
+                    <a href="#" class="footer-link"><p>Gratis Ongkir</p> </a>
+                    <a href="#" class="footer-link"><p>Pengembalian Barang</p> </a>
+                    <a href="#" class="footer-link"><p>Hubungi Kami</p> </a>
+                </div>
+
+                <div class="footer-icons">
+                    <h3>Pengiriman</h3>
+                    <div class="icon-row">
+                        <img src="images/shipping/jne.png" alt="Pengiriman 1" class="footer-icon">
+                        <img src="images/shipping/jnt.png" alt="Pengiriman 2" class="footer-icon">
+                        <img src="images/shipping/ninja.png" alt="Pengiriman 3" class="footer-icon">
+                    </div>
+                    <div class="icon-row">
+                        <img src="images/shipping/sicepat.png" alt="Pengiriman 4" class="footer-icon">
+                        <img src="images/shipping/gosend.png" alt="Pengiriman 5" class="footer-icon">
+                        <img src="images/shipping/grab.png" alt="Pengiriman 6" class="footer-icon">
+                    </div>
+                    <div class="icon-row">
+                        <img src="images/shipping/idex.png" alt="Pengiriman 7" class="footer-icon">
+                        <img src="images/shipping/anteraja.png" alt="Pengiriman 8" class="footer-icon">
+                        <img src="images/shipping/indopaket.png" alt="Pengiriman 9" class="footer-icon">
+                    </div>
+                </div>
+
+                <div class="footer-icons">
+                    <h3>Pembayaran</h3>
+                    <div class="icon-row">
+                        <img src="images/payment/mandiri.png" alt="Pembayaran 1" class="footer-icon">
+                        <img src="images/payment/bni.png" alt="Pembayaran 2" class="footer-icon">
+                        <img src="images/payment/bca.png" alt="Pembayaran 3" class="footer-icon">
+                    </div>
+                    <div class="icon-row">
+                        <img src="images/payment/bsi.png" alt="Pembayaran 4" class="footer-icon">
+                        <img src="images/payment/cimb.png" alt="Pembayaran 5" class="footer-icon">
+                        <img src="images/payment/bri.png" alt="Pembayaran 6" class="footer-icon">
+                    </div>
+                    <div class="icon-row">
+                        <img src="images/payment/kredivo.png" alt="Pembayaran 4" class="footer-icon">
+                        <img src="images/payment/akulaku.png" alt="Pembayaran 5" class="footer-icon">
+                        <img src="images/payment/visa.png" alt="Pembayaran 6" class="footer-icon">
+                    </div>
+                </div>
+
+                <div class="footer-icons">
+                    <h3>Ikuti kami</h3>
+                    <div class="icon-row">
+                        <img src="images/social/fb.png" alt="Social 1" class="footer-icon1">
+                    </div>
+                    <div class="icon-row">
+                        <img src="images/social/ig.png" alt="Social 2" class="footer-icon1">
+                    </div>
+                    <div class="icon-row">
+                        <img src="images/social/x.png" alt="Social 3" class="footer-icon1">
+                    </div>
+                    <div class="icon-row">
+                        <img src="images/social/linkedin.png" alt="Social 4" class="footer-icon1">
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2024 eziBox. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
